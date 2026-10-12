@@ -1,20 +1,2 @@
+<img width="488" height="2268" alt="image" src="https://github.com/user-attachments/assets/5a4adc10-9c1b-47cb-90b4-aece052f4bf9" />
 
-# 📡 NOVANET FREE WiFi Billing System
-
-This system allows MikroTik owners to accept Paystack payments directly on their routers without needing a VPS,vpn or a monthly billing service.
-
-## 🚀 Project Demo
-
-[![Watch the demo](https://img.youtube.com/vi/fT7LPkxg1Us/0.jpg)](https://youtu.be/fT7LPkxg1Us)
-
-## 🚀 Deployment
-1. Connect to your MikroTik via WinBox.
-2. Open **Terminal**.
-3. Paste the Deployment Script found in `setup.rsc`.
-4. Enter your Paystack Key in the `login.html` file.
-
-## Features
-- **Auto-Retry Logic:** Prevents login collisions.
-- **Trial System:** Built-in 3-minute free trial using `localStorage`.
-- **Anti-Hacker:** DevTools blocking and Right-Click disabling.
-- **PC-Block Ready:** (Optional) JavaScript-based device detection.
