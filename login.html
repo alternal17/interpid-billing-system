@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ULTRA.NET - High Speed WiFi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="inline.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #135746; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .main-card { background: rgba(102, 54, 54, 0.336)); padding: 30px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 400px; }
+        .pkg-container { margin-top: 20px; display: grid; gap: 12px; }
+        .pkg-btn { 
+            background: #080808; color: rgb(243, 242, 242); border: none; padding: 18px; 
+            border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 16px;
+            transition: 0.2s;
+        }
+        .pkg-btn:active { transform: scale(0.96); opacity: 0.9; }
+        .pkg-btn.test { background: #3375a8; margin-top: 10px; }
+        .price-tag { display: block; font-size: 13px; font-weight: normal; opacity: 0.8; }
+        .status-msg { margin: 15px 0; font-weight: bold; font-size: 14px; min-height: 20px; color: #555; }
+        .footer-info { font-size: 11px; color: #e7dede; margin-top: 25px; line-height: 1.5; }
+    </style>
+</head>
+
+<body>
+    $(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-status)" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        /** 1. DEVTOOLS PROTECTION **/
+        document.addEventListener('contextmenu', e => e.preventDefault());
+        setInterval(function() {
+            const start = performance.now();
+            debugger;
+            if (performance.now() - start > 100) { window.location.reload(); }
+        }, 100);
+
+        /** 2. USER POOLS (All 100 Users)use AI to replace value using the mikrotik generated users **/
+        const pools = {
+            "4m": [
+    {u:"user111",p:"1344"},
+    {u:"user112",p:"1345"},
+    {u:"user113",p:"1346"},
+    {u:"user114",p:"1347"},
+    {u:"user115",p:"1348"},
+    {u:"user116",p:"1349"},
+    {u:"user117",p:"1350"},
+    {u:"user118",p:"1351"},
+    {u:"user119",p:"1352"},
+    {u:"user120",p:"1353"}
+],
+      "5hr": [
+    {u:"user121",p:"1354"},
+    {u:"user122",p:"1355"},
+    {u:"user123",p:"1356"},
+    {u:"user124",p:"1357"},
+    {u:"user125",p:"1358"},
+    {u:"user126",p:"1359"},
+    {u:"user127",p:"1360"},
+    {u:"user128",p:"1361"},
+    {u:"user129",p:"1362"},
+    {u:"user130",p:"1363"},
+    {u:"user131",p:"1364"},
+    {u:"user132",p:"1365"},
+    {u:"user133",p:"1366"},
+    {u:"user134",p:"1367"},
+    {u:"user135",p:"1368"},
+    {u:"user136",p:"1369"},
+    {u:"user137",p:"1370"},
+    {u:"user138",p:"1371"},
+    {u:"user139",p:"1372"},
+    {u:"user140",p:"1373"},
+    {u:"user141",p:"1374"},
+    {u:"user142",p:"1375"},
+    {u:"user143",p:"1376"},
+    {u:"user144",p:"1377"},
+    {u:"user145",p:"1378"},
+    {u:"user146",p:"1379"},
+    {u:"user147",p:"1380"},
+    {u:"user148",p:"1381"},
+    {u:"user149",p:"1382"},
+    {u:"user150",p:"1383"}
+],
+     "12hr": [
+    {u:"user151",p:"1384"},
+    {u:"user152",p:"1385"},
+    {u:"user153",p:"1386"},
+    {u:"user154",p:"1387"},
+    {u:"user155",p:"1388"},
+    {u:"user156",p:"1389"},
+    {u:"user157",p:"1390"},
+    {u:"user158",p:"1391"},
+    {u:"user159",p:"1392"},
+    {u:"user160",p:"1393"},
+    {u:"user161",p:"1394"},
+    {u:"user162",p:"1395"},
+    {u:"user163",p:"1396"},
+    {u:"user164",p:"1397"},
+    {u:"user165",p:"1398"},
+    {u:"user166",p:"1399"},
+    {u:"user167",p:"1400"},
+    {u:"user168",p:"1401"},
+    {u:"user169",p:"1402"},
+    {u:"user170",p:"1403"},
+    {u:"user171",p:"1404"},
+    {u:"user172",p:"1405"},
+    {u:"user173",p:"1406"},
+    {u:"user174",p:"1407"},
+    {u:"user175",p:"1408"},
+    {u:"user176",p:"1409"},
+    {u:"user177",p:"1410"},
+    {u:"user178",p:"1411"},
+    {u:"user179",p:"1412"},
+    {u:"user180",p:"1413"}
+],   
+    "1day": [
+    {u:"user181",p:"1414"},
+    {u:"user182",p:"1415"},
+    {u:"user183",p:"1416"},
+    {u:"user184",p:"1417"},
+    {u:"user185",p:"1418"},
+    {u:"user186",p:"1419"},
+    {u:"user187",p:"1420"},
+    {u:"user188",p:"1421"},
+    {u:"user189",p:"1422"},
+    {u:"user190",p:"1423"},
+    {u:"user191",p:"1424"},
+    {u:"user192",p:"1425"},
+    {u:"user193",p:"1426"},
+    {u:"user194",p:"1427"},
+    {u:"user195",p:"1428"},
+    {u:"user196",p:"1429"},
+    {u:"user197",p:"1430"},
+    {u:"user198",p:"1431"},
+    {u:"user199",p:"1432"},
+    {u:"user200",p:"1433"},
+    {u:"user201",p:"1434"},
+    {u:"user202",p:"1435"},
+    {u:"user203",p:"1436"},
+    {u:"user204",p:"1437"},
+    {u:"user205",p:"1438"},
+    {u:"user206",p:"1439"},
+    {u:"user207",p:"1440"},
+    {u:"user208",p:"1441"},
+    {u:"user209",p:"1442"},
+    {u:"user210",p:"1443"}
+]
+        };
+
+        /** 3. AUTO-RETRY LOGIC **/
+        let retryCount = 0;
+        const maxRetries = 15;
+
+        function setStatus(text, color = "#555") {
+            const el = document.getElementById('status-box');
+            el.innerText = text;
+            el.style.color = color;
+        }
+
+        function triggerPoolLogin(profile) {
+            setStatus("Connecting... (Attempt " + (retryCount + 1) + ")", "#09a5db");
+            
+            const pool = pools[profile];
+            const acc = pool[Math.floor(Math.random() * pool.length)];
+            
+            document.sendin.username.value = acc.u;
+            document.sendin.password.value = hexMD5('$(chap-id)' + acc.p + '$(chap-challenge)');
+            
+            const formData = new URLSearchParams(new FormData(document.sendin));
+
+            fetch('$(link-login-only)', { method: 'POST', body: formData })
+            .then(res => {
+                if (res.url.includes('error')) {
+                    if (retryCount < maxRetries) {
+                        retryCount++;
+                        setTimeout(() => triggerPoolLogin(profile), 400);
+                    } else {
+                        setStatus("Server busy. Try again.", "red");
+                    }
+                } else {
+                    setStatus("Connected! Enjoy.", "green");
+                    window.location.href = "$(link-status)";
+                }             
+                        localStorage.setItem("voucherUser", acc.u);
+            localStorage.setItem("voucherPass", acc.p);
+               
+
+            }).catch(() => document.sendin.submit());
+        }
+
+        /** 4. PAYSTACK & TRIAL **/
+        function pay(profile, ksh) {
+            let handler = PaystackPop.setup({
+                key: 'pk_live_b4bde5b0ecfc84123e7c7b9deb97f133543f985f', 
+                email: 'user@ULTRA.com',
+                amount: ksh * 100,
+                currency: 'KES',
+                callback: (res) => { if (res.status === 'success') { retryCount = 0; triggerPoolLogin(profile); } }
+            });
+            handler.openIframe();
+        }
+        function doManualLogin() {
+
+    var username =
+        document.getElementById("voucherUser").value;
+
+    var password =
+        document.getElementById("voucherPass").value;
+
+    document.sendin.username.value = username;
+
+    document.sendin.password.value =
+        hexMD5(
+            '$(chap-id)' +
+            password +
+            '$(chap-challenge)'
+        );
+
+    document.sendin.submit();
+
+    return false;
+}
+
+        function startTest() {
+            if (localStorage.getItem('test_used')) return setStatus("Trial already used.", "red");
+            localStorage.setItem('test_used', 'true');
+            retryCount = 0;
+            triggerPoolLogin('test');
+        }
+    </script>
+    $(endif)
+
+    <div class="main-card">
+        <h1 style="color:#dff707; margin:0;">ULTRA.NET</h1>
+        <p style="color:#e6e4ec; margin-bottom:20px;">Fast & Secure Unlimited WiFi</p>
+        
+        <div id="status-box" class="status-msg">Choose a data plan to start</div>
+
+        <div class="pkg-container">
+            <button class="pkg-btn" onclick="pay('4m', 3)">
+                4 MINUTES ACCESS <span class="price-tag">Ksh 3</span>
+            </button>
+            <button class="pkg-btn" onclick="pay('5hr', 10)">
+                5 HOURS ACCESS <span class="price-tag">Ksh 10</span>
+            </button>
+            <button class="pkg-btn" onclick="pay('12hr', 20)">
+                12 HOURS ACCESS <span class="price-tag">Ksh 20</span>
+            </button>
+            <button class="pkg-btn" onclick="pay('1day', 35)">
+                24 HOURS ACCESS <span class="price-tag">Ksh 35</span>
+            </button>
+            <button class="pkg-btn test" onclick="startTest()">
+                5 MIN FREE TRIAL
+            </button>
+            
+        </div>
+
+        
+
+        <div class="footer-info">
+            <hr style="margin:20px 0;">
+
+<h3 style="color:#dff707;">
+    Already Have a Voucher?
+</h3>
+
+<p style="color:#e6e4ec;font-size:13px;">
+    Enter your username and password to reconnect.
+</p>
+
+<form name="manualLogin" onsubmit="return doManualLogin();">
+
+    <input
+        type="text"
+        id="voucherUser"
+        placeholder="Username"
+        required
+        style="
+            width:100%;
+            padding:12px;
+            margin-bottom:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            box-sizing:border-box;
+        "
+    >
+
+    <input
+        type="password"
+        id="voucherPass"
+        placeholder="Password"
+        required
+        style="
+            width:100%;
+            padding:12px;
+            margin-bottom:10px;
+            border:1px solid #ccc;
+            border-radius:8px;
+            box-sizing:border-box;
+        "
+    >
+
+    <button
+        type="submit"
+        style="
+            width:100%;
+            padding:12px;
+            background:#09a5db;
+            color:white;
+            border:none;
+            border-radius:8px;
+            font-weight:bold;
+            cursor:pointer;
+        "
+    >
+        Login
+    </button>
+
+</form>
+
+<div class="footer-info">
+    IP: $(ip) | MAC: $(mac)<br>
+    © 2026 ULTRA.NET NETWORKS<br>
+    FOR SUPPORT, CONTACT: 0142474528
+        </div>
+        </div>
+    </div>
+</body>
+</html>
